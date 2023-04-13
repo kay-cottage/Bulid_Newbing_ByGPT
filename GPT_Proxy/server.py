@@ -64,7 +64,8 @@ def send_message():
         del completion,data_s,apikey,messages
         return jsonify({"reply": en_d})
     except Exception as e:
-        return jsonify({"reply": str(e)})
+        en_d=encrypt(key,e)
+        return jsonify({"reply": en_d})
 
 
     
